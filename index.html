@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="We propose an equation-grounded anomaly taxonomy and a pipeline to synthesize reproducible maritime anomalies on AIS data, and provide a benchmark covering both single-vessel and inter-vessel anomaly detection."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Open Graph / social preview -->
+    <meta
+      property="og:title"
+      content="
+Redefining Maritime Anomaly Detection via Equation-Grounded Synthetic Anomalies"
+    />
+    <meta
+      property="og:description"
+      content="We propose an equation-grounded anomaly taxonomy and a pipeline to synthesize reproducible maritime anomalies on AIS data, and provide a benchmark covering both single-vessel and inter-vessel anomaly detection."
+    />
+    <meta
+      property="og:url"
+      content=https://github.com/snudial/open-maritime-anomaly-detection#"
+    />
+    <meta property="og:image" content="static/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="450" />
+
+    <meta
+      name="keywords"
+      content="Maritime Anomaly Detection, Automatic Identification System (AIS), Synthetic Anomaly Generation, Benchmark Dataset, Large Language Models"
+    />
+
+    <title>
+      Redefining Maritime Anomaly Detection via Equation-Grounded Synthetic
+      Anomalies
+    </title>
+
+    <link rel="icon" href="static/images/icon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma-carousel/4.0.24/css/bulma-carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma-slider/2.0.5/css/bulma-slider.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="static/css/index.css" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+    ></script>
+    <script defer src="static/js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma-carousel/4.0.24/js/bulma-carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma-slider/2.0.5/js/bulma-slider.min.js"></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                Redefining Maritime Anomaly Detection via Equation-Grounded
+                Synthetic Anomalies
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <span>Youngseok Hwang</span><sup>1 *</sup>,
+                </span>
+                <span class="author-block">
+                  <span>Sungho Bae</span><sup>1 *</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://www.dohun.me/">Dohun Lee</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <span>Jaeeun Seo</span><sup>1</sup>,
+                </span>
+                <br />
+                <span class="author-block">
+                  <a href="https://jeehongkim0407.github.io/">Jeehong Kim</a
+                  ><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <span>Wonhee Lee</span><sup>2</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://hyunwoopark.com/">Hyunwoo Park</a
+                  ><sup>1</sup>
+                </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"
+                  ><sup>1</sup>Seoul National University</span
+                >
+                <span class="author-block"
+                  ><sup>2</sup>Korea Research Institute of Ships and Ocean
+                  Engineering</span
+                >
+                <br />
+                <span class="author-block is-size-6"
+                  ><sup>*</sup>Equal contribution</span
+                >
+                <br />
+                <span class="author-block"
+                  ><b>KDD 2026 (Oral Presentation)</b></span
+                >
+                <br />
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF link -->
+                  <span class="link-block">
+                    <a
+                      href="https://dl.acm.org/doi/10.1145/3770855.3818984"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <!-- arXiv link -->
+                  <span class="link-block">
+                    <a
+                      href=""
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon"><i class="ai ai-arxiv"></i></span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <!-- Code link -->
+                  <span class="link-block">
+                    <a
+                      href="https://github.com/snudial/open-maritime-anomaly-detection#"
+                      target="blank"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <!-- Video link (optional) -->
+                  <span class="link-block">
+                    <a
+                      href=""
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon"><i class="fab fa-youtube"></i></span>
+                      <span>Video</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaser / overview figure -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop is-wide">
+        <div class="hero-body">
+          <img
+            src="static/images/teaser.png"
+            alt="Overview of the framework. We propose a pipeline for synthesizing and labeling maritime anomalies in AIS data."
+          />
+          <h2 class="subtitle has-text-centered">
+            Overview of the framework, a pipeline for synthesizing and labeling
+            maritime anomalies in AIS data.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Abstract -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Maritime anomaly detection is essential for ensuring maritime
+                safety, security, and efficient traffic management at sea, with
+                Automatic Identification System (AIS) data serving as a primary
+                data source. Despite its importance, most publicly available AIS
+                datasets lack predefined anomaly labels, forcing prior studies
+                to rely on either distribution-based rarity or domain
+                rule/expert-assisted labeling. These approaches, however, face
+                fundamental limitations: statistical rarity often fails to
+                reflect practically critical events, while expert-based labeling
+                is costly, subjective, and difficult to scale. Moreover, both
+                paradigms tend to overlook interaction-driven hazards such as
+                near-miss approaches between vessels. To address these
+                challenges, we propose an equation-grounded anomaly taxonomy
+                that is implementable under a limited AIS observation schema and
+                extensible to other AIS datasets. Specifically, the taxonomy
+                defines three anomaly types: unexpected AIS activity (A1), route
+                deviation (A2), and close approach (A3), covering both
+                single-vessel and inter-vessel anomalies. Building on this
+                taxonomy, we introduce a unified score--synthesize--label
+                pipeline that produces LLM-guided plausibility scores, uses them
+                to synthesize anomalies, and assigns timestamp-level labels. To
+                rigorously assess detection performance, we further design
+                benchmark evaluation settings that account for variations in
+                temporal-window length and anomaly-type composition, and
+                evaluate a broad range of time-series models and anomaly
+                detection models. Together, these contributions provide a
+                systematic basis for evaluating maritime anomaly detection
+                methods across different anomaly types.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="section">
+      <div class="container is-max-desktop is-wide">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">Methodology</h2>
+            <img
+              src="static/images/method.png"
+              alt="[PLACEHOLDER: method figure alt text]"
+            />
+            <div class="content has-text-justified">
+              <p>
+                We distinguish anomalies into single-vessel and inter-vessel
+                categories and propose an equation-grounded taxonomy that is
+                operationalizable under a limited AIS schema. We further employ
+                an LLM as a constrained scoring module to generate
+                context-conditioned plausibility scores, which in turn manage
+                the placement and magnitude of synthesized anomalies. Anomalies
+                are synthesized and labeled via an equation-grounded
+                synthesizer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LLM Scorer Validation -->
+    <section class="section">
+      <div class="container is-max-desktop is-wide">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">LLM Scorer Validation</h2>
+            <div class="columns is-centered">
+              <div class="column is-one-third has-text-centered">
+                <img
+                  class="result-thumb"
+                  src="static/images/results1.png"
+                  alt="distributional analysis"
+                />
+              </div>
+              <div class="column is-one-third has-text-centered">
+                <img
+                  class="result-thumb"
+                  src="static/images/results2.png"
+                  alt="repeatability"
+                />
+              </div>
+              <div class="column is-one-third has-text-centered">
+                <img
+                  class="result-thumb"
+                  src="static/images/results3.png"
+                  alt="feature space"
+                />
+              </div>
+            </div>
+            <p class="has-text-centered is-size-6 text-960">
+              We verify that the LLM scorer produces anomaly-type-aware guidance
+              rather than assigning high scores to fixed timestamp positions.
+            </p>
+            <br />
+            <div class="content has-text-justified">
+              <p>
+                Across diverse experimental settings and baseline models, we
+                find that performance is largely determined by how well a
+                model’s assumptions align with anomaly-specific cues,
+                underscoring the advantage of domain-defined, equation-grounded
+                supervision over sparsity-based labeling.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optional: video / qualitative results carousel -->
+    <!--
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <img src="static/images/qual1.png" alt="[PLACEHOLDER]"/>
+        </div>
+        <div class="item">
+          <img src="static/images/qual2.png" alt="[PLACEHOLDER]"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+    <!-- BibTeX -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@inproceedings{[PLACEHOLDER:citekey],
+  title     = {[PLACEHOLDER: Paper Title]},
+  author    = {[PLACEHOLDER: Author One and Author Two and Author Three]},
+  booktitle = {[PLACEHOLDER: Venue, e.g. Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)]},
+  year      = {[PLACEHOLDER: 2026]}
+}</code></pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content has-text-centered">
+              <p>
+                We acknowledge 
+                <a
+                  href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                  target="_blank"
+                  >Academic Project Page Template</a
+                >, which is adapted from the
+                <a href="https://nerfies.github.io" target="_blank">Nerfies</a>
+                for the website template.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
